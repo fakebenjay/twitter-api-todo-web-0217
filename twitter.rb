@@ -41,16 +41,16 @@ end
 
  tweet_client = TwitterApi.new
  puts "You most recently followed:"
- puts tweet_client.most_recent_friend.name
+ puts "#{tweet_client.most_recent_friend.name} (@#{tweet_client.most_recent_friend.screen_name})"
  puts "*******"
 
  puts "Your name is:"
- puts tweet_client.find_user_for("FakeBenJay").name
+ puts "#{tweet_client.find_user_for("FakeBenJay").name} (@#{tweet_client.find_user_for("FakeBenJay").screen_name})"
  puts "*******"
 
  puts "Your ten newest followers are:"
  tweet_client.find_followers_for("FakeBenJay").each do |follower|
-   puts follower.name
+   puts "#{follower.name} (@#{follower.screen_name})"
  end
  puts "*******"
  puts "Your home timeline:"
